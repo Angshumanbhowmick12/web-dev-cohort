@@ -21,7 +21,7 @@ button.forEach((btn)=>{
                 break;
             case "reset":
                 text.style.color="#34495e"
-                break;
+                 break;
         }
      })
 })
