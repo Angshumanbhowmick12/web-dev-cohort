@@ -115,8 +115,7 @@ document.addEventListener('DOMContentLoaded',()=>{
        
       autoPlaybtn.innerText="Stop Auto Play"
 
-          // startTimer()
-          // startAutoplay()
+          
         } else {
           clearInterval(autoPlay)
         clearInterval(timeInterval)
