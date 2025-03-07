@@ -20,3 +20,114 @@ const images = [
     caption: 'Urban City Skyline',
   },
 ];
+
+const carousel_track = document.querySelector(".carousel-track")
+const carouselCaption= document.querySelectorAll(".carousel-caption")
+const prevBtn= document.querySelector("#prevButton")
+const nextBtn= document.querySelector("#nextButton")
+const carousel_nav= document.querySelector(".carousel-nav")
+const autoPlaybtn= document.querySelector("#autoPlayButton")
+const timer = document.querySelector("#timerDisplay")
+
+let currInedex=0;
+
+let autoPlay;
+let timeInterval;
+
+document.addEventListener('DOMContentLoaded',()=>{
+  images.forEach((img,index)=>{
+     const image = document.createElement("img")
+     image.src = img.url
+     image.classList="carousel-slide"
+     image.dataset.index=index
+     carousel_track.appendChild(image)
+
+    const point= document.createElement("div")
+    point.classList="carousel-indicator"
+    point.dataset.index=index;
+    carousel_nav.appendChild(point)
+
+    
+    //console.log(point);
+    })
+
+    const updateCarosel= (currInedex)=>{
+      carouselCaption.forEach((cap,i)=>{
+        cap.innerText = images[currInedex].caption
+        cap.classList.add("carousel-caption", i===currInedex)
+      })
+
+      document.querySelectorAll(".carousel-slide").forEach((img,i)=>{
+        img.style.display= i===currInedex ? "block" : "none"
+      })
+      document.querySelectorAll(".carousel-indicator").forEach((dot,i)=>{
+        dot.classList.toggle('active', i==currInedex)
+      })
+    }
+
+    updateCarosel(currInedex)
+
+    prevBtn.addEventListener('click',()=>{
+      currInedex=(currInedex -1 + images.length) % images.length;
+      updateCarosel(currInedex)
+    } )
+
+    nextBtn.addEventListener('click',()=>{
+      currInedex=(currInedex +1 + images.length) % images.length;
+      updateCarosel(currInedex)
+    })
+
+    
+    
+    // function startTimer(){
+      
+    // }
+    
+    // function startAutoplay(){
+    //    let autoPlay= setInterval(()=>{
+    //     currInedex=(currInedex +1 + images.length) % images.length;
+    //     updateCarosel(currInedex)
+    //    },5000)
+       
+    // }
+
+    
+    
+    autoPlaybtn.addEventListener('click',()=>{
+    
+
+        if (autoPlaybtn.innerText==="Start Auto Play") {
+
+        let time=5;
+        timer.innerText=`Next slide in ${time}s`
+      timeInterval=setInterval(()=>{
+          time--;
+          timer.innerText=`Next slide in ${time}s`
+          if (time===0) {
+            time=5
+          }
+        },1000)
+
+        autoPlay= setInterval(()=>{
+        currInedex=(currInedex +1 + images.length) % images.length;
+        updateCarosel(currInedex)
+       },5000)
+       
+      autoPlaybtn.innerText="Stop Auto Play"
+
+          // startTimer()
+          // startAutoplay()
+        } else {
+          clearInterval(autoPlay)
+        clearInterval(timeInterval)
+        timer.innerText=""
+        autoPlaybtn.innerText="Start Auto Play"
+        
+        }
+
+        
+    })
+  
+})
+
+
