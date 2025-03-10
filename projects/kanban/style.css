@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+  display: flex;
+  padding: 15px 30px;
+  gap: 10px;
+  
+}
+
+body{
+    background-image:url('https://external-preview.redd.it/A1oCjsXgrSoigA1ypy3r5RBzSIRc4-lGMpAZwmTS_jI.jpg?auto=webp&s=e1a7077f2287d80e7ee515a56918dfcdb3ac4f07');
+    background-position: center;
+    background-repeat: repeat-x;
+
+    
+}
+
+#todo-btn{
+    border: #ffffff88;
+    padding: 10px 20px;
+    border-radius: 8px;
+    -webkit-box-shadow: 5px 8px 22px -10px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px 8px 22px -10px rgba(66, 68, 90, 1);
+    box-shadow: 5px 8px 22px -10px rgb(82, 85, 109);
+    cursor: pointer;
+    margin: 10px 30px;
+}
+
+button:hover{
+    background-color: aqua;
+
+}
+
+  
+.item {
+    border: 1px solid;
+    padding: 15px 8px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    
+}
+
+.item:hover {
+    background: white;
+    color: black;
+}  
+
+.board{
+    border: 2px solid rgb(248, 248, 248);
+    height: 70vh;
+    width: 300px;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    -webkit-box-shadow: 5px 8px 22px -10px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 5px 8px 22px -10px rgba(66, 68, 90, 1);
+    box-shadow: 5px 8px 22px -10px rgb(82, 85, 109);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(18, 31, 57, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.todo-dot{
+    background-color: orange;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    margin:7px;
+}
+
+.dot{
+    display: flex;
+
+}
+.progress-dot{
+    background-color: rgb(7, 7, 242);
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    margin:7px;
+}
+
+.complete-dot{
+    background-color:rgb(88, 192, 88);
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    margin:7px;
+}
+
+#edit{
+    padding: 3px;
+}
+
+#del{
+    padding: 3px 5px;
+    
+}
+
+.add-board{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: #fff;
+    
+}
+
+.board-dot{
+    background-color: #fff;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    padding: 5px;
+    margin:7px;
+}
+
+.date{
+    margin: 5px 0px 0px 20px;
+}
+
